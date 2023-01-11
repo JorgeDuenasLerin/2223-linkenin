@@ -1,5 +1,9 @@
 <?php 
 require("../src/init.php");
+
+$DB->ejecuta("SELECT * FROM usuarios");
+$usuarios = $DB->obtenDatos();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,9 +11,14 @@ require("../src/init.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?=$title?></title>
+    <title><?=$CONFIG['title']?></title>
 </head>
 <body>
     <h1>Hola mundo</h1>
+    <?php foreach($usuarios as $usuario) { ?>
+        <?php 
+            print_r($usuario);
+        ?>
+    <?php } ?>
 </body>
 </html>

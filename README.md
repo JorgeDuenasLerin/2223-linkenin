@@ -19,3 +19,9 @@ Cargar ejemplos
 ```
 mysql -u linkenin -p linkenin < scripts/db.ejemplos.sql
 ```
+
+## Ejecutar servidor dev
+
+```
+./rundevserver.sh 8000
+```
