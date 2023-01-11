@@ -7,7 +7,7 @@ CREATE TABLE usuarios (
     descripcion TEXT
 );
 
-CREATE TABLE token (
+CREATE TABLE tokens (
     id int auto_increment PRIMARY KEY,
     id_usuario int,
     valor VARCHAR(255)
