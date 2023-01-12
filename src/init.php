@@ -2,6 +2,7 @@
 
 require("config.php");
 require("DWESBaseDatos.php");
+require('../vendor/autoload.php');
 
 $DB=DWESBaseDatos::obtenerInstancia();
 $DB->inicializa(
