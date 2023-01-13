@@ -1,5 +1,7 @@
 # 2223-linkenin
 
+Esta aplicación permite el registro de usuarios, estos luego podrán recuperar su contraseña. Editar su perfil, etc.
+
 ## Instalación
 
 Crear base de datos
@@ -24,4 +26,12 @@ mysql -u linkenin -p linkenin < scripts/db.ejemplos.sql
 
 ```
 ./rundevserver.sh 8000
+```
+
+## Librerías
+
+Instalar [composer](https://getcomposer.org/download/)
+
+```
+composer install phpmailer/phpmailer
 ```

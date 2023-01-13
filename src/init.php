@@ -1,5 +1,7 @@
 <?php 
 
+const LONG_TOKEN=64;
+
 require("config.php");
 
 require('../vendor/autoload.php');
@@ -14,5 +16,7 @@ $DB->inicializa(
     $CONFIG['db_pass']
 );
 
+// Pon política de COOKIES
+session_start();
 
 ?>
