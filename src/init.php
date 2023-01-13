@@ -1,8 +1,11 @@
 <?php 
 
 require("config.php");
-require("DWESBaseDatos.php");
+
 require('../vendor/autoload.php');
+
+require("DWESBaseDatos.php");
+require("Mailer.php");
 
 $DB=DWESBaseDatos::obtenerInstancia();
 $DB->inicializa(
