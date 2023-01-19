@@ -18,5 +18,6 @@ $DB->inicializa(
 
 // Pon política de COOKIES
 session_start();
+require("recuerdame.php");
 
 ?>

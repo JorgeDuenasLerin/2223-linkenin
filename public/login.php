@@ -3,6 +3,10 @@ require("../src/init.php");
 
 /* Es un mundo feliz y toda la información está bein */
 
+echo "Hola";
+print_r($_SESSION);
+print_r($_POST);
+
 // Recoger los datos de post
 if(isset($_POST['login'])){
     $nombre = $_POST['nombre'];
@@ -16,7 +20,7 @@ if(isset($_POST['login'])){
     );
 
     $user = $DB->obtenElDato();
-
+    
     // Verificar la contraseña
     if(password_verify($_POST['passwd'], $user['passwd'])) {
         $_SESSION['id'] = $user['id'];
@@ -43,6 +47,14 @@ if(isset($_POST['login'])){
                     "httponly" => true
                 ]
             );
+        }
+
+        if(isset($_GET['redirect'])) {
+            header("Location: {$_GET['redirect']}");
+            die();
+        } else {
+            header("Location: listado.php");
+            die();
         }
 
     } else {
