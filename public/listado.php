@@ -1,24 +1,45 @@
 <?php 
 require("../src/init.php");
 
+$title="Listado de usuarios";
+$pageHeader="Listado";
+$pagId="listado";
+$content="Esto es el contenido";
+
+// Obtiene info del modelo
 $DB->ejecuta("SELECT * FROM usuarios");
 $usuarios = $DB->obtenDatos();
 
+// Se lo pasa al template
+ob_start();
+
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?=$CONFIG['title']?></title>
-</head>
-<body>
-    <h1>Hola mundo</h1>
+
+<table>
+    <tr><td>Nombre</td><td>Foto</td></tr>
+
     <?php foreach($usuarios as $usuario) { ?>
-        <?php 
-            print_r($usuario);
-        ?>
+        <tr>
+            <td><?=$usuario['nombre']?></td>
+            <td><img src="<?=$usuario['img']?>" alt=""></td>
+        </tr>
     <?php } ?>
-</body>
-</html>
+
+</table>
+
+<?php 
+$content=ob_get_clean();
+
+require("template.php");
+
+/*
+
+
+<?php foreach($usuarios as $usuario) {
+    <?php 
+        print_r($usuario);
+    ?>
+<?php } ?>
+*/
+?>
+
