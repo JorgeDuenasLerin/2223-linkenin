@@ -6,7 +6,7 @@ PUERTO_MIN=1023
 PUERTO_MAX=65536
 
 # Directorio
-DIRECTORIO_POR_DEFECTO="public"
+DIRECTORIO_POR_DEFECTO="html"
 
 # Texto de ejemplo de uso
 EJEMPLO_USO="\nUso: $0 [-p <puerto>]"

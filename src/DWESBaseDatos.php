@@ -65,6 +65,7 @@ class DWESBaseDatos {
           }
         } catch (Exception $e) {
           error_log($e->getMessage());
+          echo $e->getMessage();
           exit('No ha sido posible la conexión');
         }
     }
@@ -94,8 +95,8 @@ class DWESBaseDatos {
         return $this->sentencia->fetchAll();
     }
 
-    function obtenElDato(){
-      return $this->sentencia->fetch();
+    function obtenPrimeraInstancia(){
+        return $this->sentencia->fetch();
     }
 
     function getLastId(){
@@ -110,4 +111,3 @@ class DWESBaseDatos {
         $this->conexion = null;
     }
 }
-?>
